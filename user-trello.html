@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>User</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css"> <!--  thêm /src/ để làm GoLang -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <script src="script/jquery.backgroundMove.js"></script>
+
+    </head>
+    <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+
+        
+        <nav class="navbar navbar-toggleable-xl navbar-inverse black">
+            
+            <div class="container-fluid">
+                <div class="leftnavbrand">
+                    <button type="button" id="sidebarCollapse" class="navbar-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Bunny</a>
+                </div>
+                <div class="user"  >
+                    <a href="#"  data-toggle="dropdown">
+                        <div class="led"><span>Hello User!</span></div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="#">Thông tin</a>
+                        <a class="dropdown-item" href="index.html">Đăng xuất</a>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+            </ul>
+            </div> -->
+        </nav>    
+        <div class="wrapper">
+                <!-- Sidebar Holder -->
+                <nav id="sidebar" >
+                    <div class="sidebar-header">
+                        <img src="img/bunnylogo-white.png" alt="">
+                    </div>
+        
+                    <ul class="list-unstyled components">
+                        <!-- <p>Dummy Heading</p> -->
+                        <li class="active">
+                            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Quản lý</a>
+                            <ul class="collapse list-unstyled" id="homeSubmenu">
+                                <li>
+                                    <a href="user-table.html">Thời khóa biểu</a>
+                                </li>
+                                <li>
+                                    <a href="user-chart.html">Điểm số</a>
+                                </li>
+                                <li>
+                                    <a href="user-trello.html">Công việc</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">About</a>
+                            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                            <ul class="collapse list-unstyled" id="pageSubmenu">
+                                <li>
+                                    <a href="#">Page 1</a>
+                                </li>
+                                <li>
+                                    <a href="#">Page 2</a>
+                                </li>
+                                <li>
+                                    <a href="#">Page 3</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Portfolio</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact</a>
+                        </li>
+                    </ul>
+<!--         
+                    <ul class="list-unstyled CTAs">
+                        <li>
+                            <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
+                        </li>
+                        <li>
+                            <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
+                        </li>
+                    </ul> -->
+                </nav>
+        
+                <!-- Page Content Holder -->
+                <div id="content">
+        
+                    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <div class="container-fluid">
+        
+                            
+                            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <i class="fas fa-align-justify"></i>
+                            </button>
+        
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="nav navbar-nav ml-auto">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="#">Page</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Page</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Page</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Page</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav> -->
+
+                  
+
+                    <h2>Quản lý công việc</h2>
+                    <p>Tương tác bằng cách kéo thả</p>
+                    
+                    
+                    <div class="drag-container outside">
+                         <h1>Need To Do</h1>
+                        <div id="div1" ondrop="drop(event)" class="drag-container" ondragover="allowDrop(event)">
+                           
+                            <div draggable="true" ondragstart="drag(event)" ondrag="changecolor()" ondragend="deleteZoomTrash()" class="drag" id="drag" ondragover="noAllowDrop(event)">
+                                <textarea rows="1" type="text" ondrop="noAllowDrop(event)">English-Grammar</textarea>
+                            </div>
+                            <div draggable="true" ondragstart="drag(event)" ondrag="changecolor()" ondragend="deleteZoomTrash()" class="drag" id="drag2" ondragover="noAllowDrop(event)">
+                                <textarea rows="1" type="text" ondrop="noAllowDrop(event)">English-Vocabulary</textarea>
+                            </div>
+                        </div>
+                        <div class="drag-add" id="add-ntdo">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+                
+                    <div class="drag-container outside">
+                        <h1>Doing</h1>
+                        <div id="div2" ondrop="drop(event)"  class="drag-container" ondragover="allowDrop(event)">
+                           
+                            <div draggable="true" ondragstart="drag(event)" ondrag="changecolor()" ondragend="deleteZoomTrash()" class="drag" id="drag3" ondragover="noAllowDrop(event)">
+                                <textarea rows="1" type="text" ondrop="noAllowDrop(event)">GoLang</textarea> 
+                            </div>
+                            <div draggable="true" ondragstart="drag(event)" ondrag="changecolor()" ondragend="deleteZoomTrash()" class="drag" id="drag4" ondragover="noAllowDrop(event)"> 
+                                <textarea rows="1" type="text" ondrop="noAllowDrop(event)">Front-end 5</textarea>
+                            </div>
+                            <div draggable="true" ondragstart="drag(event)" ondrag="changecolor()" ondragend="deleteZoomTrash()" class="drag" id="drag5" ondragover="noAllowDrop(event)">
+                                <textarea rows="1" type="text" ondrop="noAllowDrop(event)">Seminar</textarea>
+                            </div>
+                        </div>
+                        <div class="drag-add" id="add-doing">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+
+                    <div class="drag-container outside">
+                        <h1>Done</h1>
+                        
+                        <div id="div3" ondrop="drop(event)" class="drag-container" ondragover="allowDrop(event)">
+                            <div draggable="true" ondragstart="drag(event)" ondrag="changecolor()" ondragend="deleteZoomTrash()" class="drag" id="drag6" ondragover="noAllowDrop(event)">
+                                <textarea rows="1" type="text"  ondrop="noAllowDrop(event)">Homework</textarea>
+                            </div>
+                            
+                        </div>
+                        <div class="drag-add" id="add-done">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+               
+                    <div id="trash" ondrop="droptrash(event)" class="drag-container" ondragover="allowDrop(event)">
+                        <i class="fas fa-trash-alt"></i>
+                    </div>
+                
+                
+            </div>
+        
+        </div>
+            
+        
+            <script src="script/script.js"></script> <!-- thêm /src/ để làm GoLang -->
+        </body>
+</html>

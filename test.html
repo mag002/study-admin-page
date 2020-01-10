@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+    body{
+        background-color: lightgray;
+        margin:0px;
+    }
+    div{
+        background-color: white;
+    }
+    .leftdoor,.rightdoor{
+        width:50%;
+        float:left;
+        height: 650px;
+        transition:all 1s;
+    }
+    .leftdoor{
+        background-image: url(../img/bg2.jpg);
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-attachment: fixed;
+        transition:all 5s;
+        transform-origin: left;
+    }
+    .rightdoor{
+        background-image: url(../img/bg2.jpg);
+        background-position: right;
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-attachment: fixed;
+        transition:all 5s;
+        transform-origin: right;
+    }
+    .leftdoor:hover{
+        /* animation: open 3s linear; */
+        transform:perspective(500px) rotatey(45deg);
+        /* transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665); */ 
+        
+
+    }
+    .rightdoor:hover{
+        transform:perspective(500px) rotatey(-45deg);
+        /* transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);*/
+        /* transform-origin: bottom right; */
+    }
+    .top{
+        position: absolute;
+        width:100px;
+        height: 100px;
+        top:0px;
+        left:0px;
+        right:0px;
+        bottom:0px;
+        margin:auto;
+    }
+ 
+    @keyframes open{
+        0%{
+            transform: perspective(500px) rotateY(10deg);
+    
+        }
+        50%{
+            transform: perspective(500px) rotateY(80deg);
+       
+        }
+        100%{
+            transform: perspective(500px) rotateY(00deg);
+      
+        }
+    }
+    /* .leftdoor:hover>.rightdoor{
+        transform:rotatey(-45deg);
+        /* transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
+        transform-origin: bottom left;
+    } */
+    .drag-container {
+        border-radius: 5px;
+        float: left;
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+        padding: 10px;
+        min-width: 197px;
+        min-height: 50px;
+        background-color:lightblue;
+    }
+    .drag{
+        margin-bottom: 5px;
+        display: block;
+        width: 100%;    
+        min-height: 20px;
+        background-color: white;
+        text-align: center;
+        border-radius: 5px;
+        padding: 12px 0px;
+    }   
+    .drag-container h1{
+        text-align: center;
+    }
+
+    .drag textarea{
+       resize: none;
+        overflow: hidden;
+        width: 100%;
+        text-align: center;
+        background-color: transparent;
+        border: none;        
+        outline: none;
+        padding: 0px 10px;
+        display: block;
+    }
+    </style>
+</head>
+<body>
+    <div id="div1" ondrop="drop(event)" class="drag-container" ondragover="allowDrop(event)">
+        <h1>Need To Do</h1>
+    </div>
+
+    <div id="div2" ondrop="drop(event)"  class="drag-container" ondragover="allowDrop(event)">
+        <h1>Doing</h1>
+        <div draggable="true" ondragstart="drag(event)" class="drag" id="drag1">
+            <textarea rows="1" type="text" ></textarea>
+        </div>
+        <div draggable="true" ondragstart="drag(event)" class="drag" id="abc">
+            <textarea rows="1" type="text" ></textarea>
+        </div>
+    </div>
+    <div id="div3" ondrop="drop(event)" class="drag-container" ondragover="allowDrop(event)">
+        <h1>Done</h1>
+    </div>
+
+    <script>
+  function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}   
+
+
+
+    var textarea =document.querySelectorAll("textarea"); // Autoresize all TEXTAREA
+    textarea.forEach(function(elem){
+        elem.addEventListener('keydown',autosize)
+    })
+
+    function autosize(){
+        var el=this;
+        setTimeout(function(){
+            el.style.cssText='height:auto,padding:0';
+            el.style.cssText='height:'+el.scrollHeight+'px';
+        },0);
+    }
+    </script>
+</body>
+</html>
